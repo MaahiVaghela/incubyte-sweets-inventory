@@ -1,23 +1,5 @@
 # incubyte-sweets-inventory
 
-📁 Project Structure
-
-Incubyte_Project/
-├── client/                 # Frontend (React + Vite)
-│   ├── src/
-│   │   ├── components/     # Reusable UI components
-│   │   ├── pages/          # Page components (Home, Add, Edit, View)
-│   │   └── main.jsx        # React entry point
-│   └── index.html
-├── server/                 # Backend (Node + Express)
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── tests/              # Mocha TDD tests
-│   └── server.js
-└── README.md
-
-
 🚀 Features
 
 ✅ View list of all sweets with images
