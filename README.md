@@ -27,7 +27,22 @@ A full-stack inventory management system for sweets 🍬 — built with **React*
 
 ## ⚙️ Project Structure
 
-<pre> ``` incubyte-sweets-inventory/ ├── backend/ │ ├── models/ │ ├── routes/ │ ├── tests/ ← All Jest test cases │ ├── utils/ │ ├── app.js │ └── server.js ├── client/ │ ├── src/ │ │ ├── components/ ← Reusable UI (SweetCard, Navbar, etc.) │ │ ├── pages/ ← Add, List, Edit sweets │ │ └── App.jsx │ └── index.html └── README.md ``` </pre>
+```
+incubyte-sweets-inventory/
+├── backend/
+│   ├── models/
+│   ├── routes/
+│   ├── tests/          ← All Jest test cases
+│   ├── app.js
+│   └── server.js
+├── client/
+│   ├── src/
+│   │   ├── components/ ← Reusable UI (SweetCard, Navbar, etc.)
+│   │   ├── pages/      ← Add, List, Edit sweets
+│   │   └── App.jsx
+│   └── index.html
+└── README.md
+```
 
 
 ## 🖥️ Setup Instructions
@@ -78,15 +93,18 @@ ChatGPT
 ### 🧾 Home - All Sweets Listing
 <img width="800" alt="Home Page" src="https://github.com/user-attachments/assets/3289f3b1-8519-4314-b055-66fe8ed265b7" />
 
-### ➕ Add New Sweet Form
+### 📦 Purchase & Restock Actions
 <img width="800" alt="Add Sweet Form" src="https://github.com/user-attachments/assets/6a4c9cac-22ff-43e6-aeed-2bb0ce883787" />
 
-### ✏️ Edit Sweet Details
+### ➕ Add New Sweet Form
 <img width="800" alt="Edit Sweet" src="https://github.com/user-attachments/assets/b2a71ec2-d732-47c1-8721-4fe322b96f80" />
 
-### 📦 Purchase & Restock Actions
+### ✏️ Edit Sweet Details
 <img width="800" alt="Purchase and Restock" src="https://github.com/user-attachments/assets/0a418137-19d3-443c-a17b-049543890172" />
 
+### 🔍 Search and sort according to name, category, price
+
+<img width="1916" height="1032" alt="image" src="https://github.com/user-attachments/assets/7b9080fa-ba61-43d9-95a5-da6ed91464a7" />
 
 ---
 
