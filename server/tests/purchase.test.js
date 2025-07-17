@@ -9,7 +9,7 @@ beforeAll(async () => {
     sweetId: 1002,
     name: "Rasgulla",
     price: 250,
-    quantity: 10,
+    quantity: 100,
     category: "Bengali",
     description: "Soft & juicy",
     image: {

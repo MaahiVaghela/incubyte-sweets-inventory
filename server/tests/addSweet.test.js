@@ -31,7 +31,7 @@ describe('POST /add', () => {
 
     const res = await request(app)
       .post('/add')
-      .field('name', 'Kaju Katli')
+      .field('name', 'Kheer')
       .field('description', 'Delicious sweet')
       .field('price', 150)
       .field('quantity', 10)
@@ -39,7 +39,7 @@ describe('POST /add', () => {
       .attach('image', fs.readFileSync(imagePath), 'sample.jpg');
 
     expect(res.statusCode).toBe(201);
-    expect(res.body).toHaveProperty('name', 'Kaju Katli');
+    expect(res.body).toHaveProperty('name', 'Kheer');
     expect(res.body).toHaveProperty('price', 150);
   });
 });

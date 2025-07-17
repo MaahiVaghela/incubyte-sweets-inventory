@@ -78,7 +78,7 @@ const SweetCard = ({ sweet, onView, onEdit, onDelete }) => {
         </button>
         <button
           className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-xl"
-          onClick={() => onDelete(sweet._id)}
+          onClick={() => onDelete(sweet.sweetId)}
         >
           Delete
         </button>
