@@ -32,17 +32,6 @@ let sweetsSchema = new mongoose.Schema({
 });
 
 
-// async function main() {
-//    await mongoose.connect(mongoURL);
-// }
-// main()
-// .then(()=>{
-//     console.log("connected");
-// })
-// .catch((err)=>{
-//     console.log(err);
-// });
-
 const SweetsDB = mongoose.model("SweetsDB", sweetsSchema, "sweetsdbs");
 module.exports= SweetsDB;
 

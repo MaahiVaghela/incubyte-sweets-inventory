@@ -8,14 +8,13 @@ require("./models/mongo.js");
 const Addsweets = require("./routes/sweetsAdd.js");
 const ListOfsweets = require("./routes/sweetsList.js");
 app.use(express.json());
-app.use(cors({
+app.use(cors({        //for connecting frontend
     origin: "*", 
     credentials: true
 }));
 const sweetView = require('./routes/sweetsView');
-app.use('/sweet', sweetView);
-
 app.use("/", ListOfsweets);
+app.use('/sweet', sweetView);
 app.use("/add", Addsweets);
 
 app.listen(3000, () =>{

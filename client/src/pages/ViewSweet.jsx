@@ -21,22 +21,8 @@ const ViewSweet = () => {
     fetchSweet();
   }, [id]);
 
-//    const handleRestock = async (sweetId) => {
-//     const quantityToAdd = prompt("Enter quantity to add:");
-//     if (!quantityToAdd || isNaN(quantityToAdd) || quantityToAdd <= 0) return;
 
-//     try {
-//       await axios.patch(`http://localhost:3000/sweet/${sweetId}/restock`, {
-//         quantityToAdd: parseInt(quantityToAdd),
-//       });
 
-//       alert("Sweet restocked successfully!");
-//       await fetchSweets(); // Refresh list
-//     } catch (error) {
-//       console.error("Restock failed:", error);
-      
-//     }
-//   };
 const handleRestock = async (sweetId) => {
   const quantityToAdd = prompt("Enter quantity to add:");
   if (!quantityToAdd || isNaN(quantityToAdd) || quantityToAdd <= 0) return;

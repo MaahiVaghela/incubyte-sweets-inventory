@@ -1,9 +1,7 @@
 
 const express = require("express");
-//const bcrypt = require("bcryptjs");
 const multer = require("multer");
 const Sweets = require("../models/sweetsDB.js");
-//const { log } = require("console");
 
 const router = express.Router();
 
@@ -15,48 +13,7 @@ router.get("/", async (req, res) => {
     res.json({ message: "Costumersignup API is working!" });
 });
 
-
-// router.post("/", upload.single("image"), async (req, res) => {
-//     try {
-//         const { name, description, image, price, quantity, category} = req.body;
-        
-
-//         // const salt = await bcrypt.genSalt(10);
-//         // const hashedPassword = await bcrypt.hash(password, salt);
-//          const totalSweets = await Sweets.countDocuments();  
-//         const sweetId = 1000 + totalSweets;       
-
-//         let sweet = await Sweets.findOne({sweetId});
-//         if (sweet) {
-//             console.log("already exist");
-//             return res.status(400).json({ message: "Sweet already exists" });
-//         }
-
-//         sweet = new Sweets({ 
-//             sweetId,
-//             name, 
-//             description, 
-//             image: {
-//                 data: req.file.buffer,
-//                 contentType: req.file.mimetype
-//             },
-//             price,
-//             quantity,
-//             category
-//         });
-           
-//         console.log(sweet);
-//         await sweet.save();
-//         // res.redirect('http://localhost:5179');
-//         res.status(201).json({ message: "Sweet added successfully!" });
-//     } catch (error) {
-//         console.error("Error", error);
-//         res.status(500).json({ message: "Server Error" });
-//     }
-// });
-
-// module.exports = router;
-
+//for storing sweets details to db from form
 router.post("/", upload.single("image"), async (req, res) => {
   try {
     const { name, description, price, quantity, category } = req.body;
