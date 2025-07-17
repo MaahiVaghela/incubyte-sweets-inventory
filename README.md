@@ -2,7 +2,7 @@
 
 📁 Project Structure
 
-Incubyte_Project/ 
+Incubyte_Project/
 ├── client/                 # Frontend (React + Vite)
 │   ├── src/
 │   │   ├── components/     # Reusable UI components
@@ -10,11 +10,13 @@ Incubyte_Project/
 │   │   └── main.jsx        # React entry point
 │   └── index.html
 ├── server/                 # Backend (Node + Express)
+│   ├── controllers/
 │   ├── models/
 │   ├── routes/
 │   ├── tests/              # Mocha TDD tests
-│   └── app.js
+│   └── server.js
 └── README.md
+
 
 🚀 Features
 
