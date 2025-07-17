@@ -236,4 +236,60 @@ router.put('/:id', upload.single('image'), async (req, res) => {
   }
 });
 
+// PATCH /sweet/:sweetId/restock
+// router.patch("/:id/restock", async (req, res) => {
+//  const sweetId = parseInt(req.params.id, 10);
+//   const { quantityToAdd } = req.body;
+
+//   try {
+//     const sweet = await Sweets.findOne({ sweetId});
+
+//     if (!sweet) return res.status(404).json({ error: "Sweet not found" });
+
+//     sweet.quantity += parseInt(quantityToAdd);
+//     await sweet.save();
+//     res.json({ message: "Sweet restocked successfully" });
+//   } catch (err) {
+//     res.status(500).json({ error: "Failed to restock sweet" });
+//   }
+// });
+
+router.patch("/:id/restock", async (req, res) => {
+  const sweetId = parseInt(req.params.id, 10);
+  const { quantityToAdd } = req.body;
+
+  console.log("➡️ Received restock request for sweetId:", sweetId);
+  console.log("📦 Quantity to add:", quantityToAdd);
+
+  if (isNaN(quantityToAdd) || quantityToAdd <= 0) {
+    return res.status(400).json({ error: "Invalid quantity to add" });
+  }
+
+  try {
+    const sweet = await Sweets.findOne({ sweetId });
+
+    if (!sweet) {
+      console.log("❌ Sweet not found");
+      return res.status(404).json({ error: "Sweet not found" });
+    }
+
+    sweet.quantity += parseInt(quantityToAdd, 10);
+    await sweet.save();
+
+    console.log("✅ Sweet restocked successfully");
+    res.json({
+      message: "Sweet restocked successfully",
+      sweet: {
+        sweetId: sweet.sweetId,
+        name: sweet.name,
+        quantity: sweet.quantity,
+        price: sweet.price,
+      },
+    });
+  } catch (err) {
+    console.error("❗Restock error:", err.message);
+    res.status(500).json({ error: "Failed to restock sweet" });
+  }
+});
+
 module.exports = router;
