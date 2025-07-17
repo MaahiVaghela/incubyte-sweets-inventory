@@ -18,6 +18,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import SweetList from "./pages/SweetListPage";
 import AddSweet from "./pages/AddSweetPage";
+import ViewSweet from './pages/ViewSweet';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SweetList />} />
         <Route path="/add" element={<AddSweet />} />
+        <Route path="/sweet/:id" element={<ViewSweet />} />
       </Routes>
     </Router>
   );

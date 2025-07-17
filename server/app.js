@@ -12,6 +12,9 @@ app.use(cors({
     origin: "*", 
     credentials: true
 }));
+const sweetView = require('./routes/sweetsView');
+app.use('/sweet', sweetView);
+
 app.use("/", ListOfsweets);
 app.use("/add", Addsweets);
 
