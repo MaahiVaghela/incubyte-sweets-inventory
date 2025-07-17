@@ -3,14 +3,22 @@ const { type } = require("os");
 const Schema = mongoose.Schema;
 let sweetsSchema = new mongoose.Schema({
    
+    sweetId: {
+    type: Number,
+    unique: true,      
+    required: true
+  },
     name: String,
     
     description : String,
 
-    image: String,
+    image: {
+       data: Buffer,
+       contentType: String
+   },
 
     price: Number,
-
+        
    quantity: Number,
 
    category: String,
