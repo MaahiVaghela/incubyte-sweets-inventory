@@ -42,4 +42,38 @@ describe('POST /add', () => {
     expect(res.body).toHaveProperty('name', 'Kheer');
     expect(res.body).toHaveProperty('price', 150);
   });
+
+    it('should successfully add a sweet with valid data', async () => {
+    const imagePath = path.join(__dirname, 'kaju-katli.jpg');
+
+    const res = await request(app)
+      .post('/add')
+      .field('name', 'pastrey')
+      .field('description', 'Delicious sweet')
+      .field('price', 500)
+      .field('quantity', 50)
+      .field('category', 'pastrey')
+      .attach('image', fs.readFileSync(imagePath), 'sample.jpg');
+
+    expect(res.statusCode).toBe(201);
+    expect(res.body).toHaveProperty('name', 'pastery');
+    expect(res.body).toHaveProperty('price', 500);
+  });
+
+   it('should successfully add a sweet with valid data', async () => {
+    const imagePath = path.join(__dirname, 'kaju-katli.jpg');
+
+    const res = await request(app)
+      .post('/add')
+      .field('name', 'laddu')
+      .field('description', 'Delicious sweet')
+      .field('price', 340)
+      .field('quantity', 100)
+      .field('category', 'laddu')
+      .attach('image', fs.readFileSync(imagePath), 'sample.jpg');
+
+    expect(res.statusCode).toBe(201);
+    expect(res.body).toHaveProperty('name', 'laddu');
+    expect(res.body).toHaveProperty('price', 150);
+  });
 });
