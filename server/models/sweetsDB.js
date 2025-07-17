@@ -8,7 +8,11 @@ let sweetsSchema = new mongoose.Schema({
     unique: true,      
     required: true
   },
-    name: String,
+    name: {
+      type:String,
+      required: true,
+      unique: true
+    },
     
     description : String,
 
@@ -19,7 +23,10 @@ let sweetsSchema = new mongoose.Schema({
 
     price: Number,
         
-   quantity: Number,
+   quantity: {
+    type:Number,
+    min: 1
+   },
 
    category: String,
 });
@@ -36,5 +43,6 @@ let sweetsSchema = new mongoose.Schema({
 //     console.log(err);
 // });
 
-const SweetsDB =  mongoose.model("SweetsDB",sweetsSchema);
+const SweetsDB = mongoose.model("SweetsDB", sweetsSchema, "sweetsdbs");
 module.exports= SweetsDB;
+

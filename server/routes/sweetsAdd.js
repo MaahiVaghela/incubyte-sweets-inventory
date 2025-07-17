@@ -73,7 +73,7 @@ router.post("/", upload.single("image"), async (req, res) => {
     const totalSweets = await Sweets.countDocuments();
     const sweetId = 1000 + totalSweets;
 
-    let sweet = await Sweets.findOne({ sweetId });
+    let sweet = await Sweets.findOne({ sweetId});
     if (sweet) {
       console.log("already exist");
       return res.status(400).json({ message: "Sweet already exists" });
